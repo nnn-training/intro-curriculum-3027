@@ -6,7 +6,9 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, {
     'Content-Type': 'text/plain; charset=utf-8'
   });
-  res.end(cp.execSync(`echo ${path}`));
+  // 変数だけならテンプレートリテラルで書く必要性はない
+  // res.end(`${path}`);
+  res.end(path);
 });
 const port = 8000;
 server.listen(port, () => {
