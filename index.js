@@ -1,6 +1,6 @@
 'use strict';
-const http = require('http');
-const cp = require('child_process');
+const http = require('node:http');
+const cp = require('node:child_process');
 const server = http.createServer((req, res) => {
   const path = req.url;
   res.writeHead(200, {
